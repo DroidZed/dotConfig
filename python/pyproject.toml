@@ -1,0 +1,17 @@
+[project]
+name = "project name"
+version = "1.0.0"
+description = "Project desc"
+authors = [{ name = "DroidZed", email = "email" }]
+license = { text = "MIT" }
+[tool.black]
+line-length = 60
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+^/test.py  # exclude a file named test.py in the root of the project (in addition to the defaults)
+'''
+[tool.isort]
+profile = "black"
